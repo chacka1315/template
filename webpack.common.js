@@ -22,10 +22,15 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
+        exclude : /\.inline\.svg$/,
       },
       {
         test: /\.html$/i,
         loader: "html-loader",
+      },
+       {
+        test: /\.inline\.svg$/,
+        type: "asset/source",
       },
     ],
   },
