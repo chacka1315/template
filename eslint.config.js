@@ -14,6 +14,11 @@ export default defineConfig([
       'no-undef': 'warn',
       'no-var': 'error',
     },
+    globals: {
+      document: 'readonly',
+      window: 'readonly',
+      console: 'readonly',
+    },
   },
   eslintConfigPrettier,
 ])
