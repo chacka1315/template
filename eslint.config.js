@@ -1,7 +1,7 @@
 import { defineConfig } from 'eslint/config'
 import js from '@eslint/js'
 import eslintConfigPrettier from 'eslint-config-prettier/flat'
-
+import globals from 'globals';
 export default defineConfig([
   {
     files: ['**/*.js'],
@@ -14,10 +14,17 @@ export default defineConfig([
       'no-undef': 'warn',
       'no-var': 'error',
     },
-    globals: {
-      document: 'readonly',
-      window: 'readonly',
-      console: 'readonly',
+   languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        myCustomGlobal: 'readonly',
+        document: 'readonly',
+        window: 'readonly',
+        console: 'readonly',
+      },
     },
   },
   eslintConfigPrettier,
