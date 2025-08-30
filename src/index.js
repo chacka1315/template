@@ -1,4 +1,1 @@
-const hello = () => {
-  console.log('bonjour');
-}
-hello();
+import './styles.css';
